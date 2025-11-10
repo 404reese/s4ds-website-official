@@ -22,45 +22,63 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            padding: 20px;
+            padding: 30px 20px;
+            gap: 25px;
         }
         .project-card {
-            position: relative;
-            background: #1b1b1b;
+            background: linear-gradient(145deg, #1e1e2e, #25252f);
             color: #fff;
-            margin: 10px;
-            border-radius: 10px;
+            border-radius: 16px;
             overflow: hidden;
-            width: 300px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            width: 350px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.6);
+            border: 1px solid rgba(255,255,255,0.05);
+            cursor: pointer;
         }
         .project-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(168,45,255,0.4), 0 0 30px rgba(2,250,242,0.2);
+            border-color: rgba(168,45,255,0.3);
         }
         .project-card img {
             width: 100%;
-            height: 200px;
+            height: 220px;
             object-fit: cover;
+            transition: transform 0.4s ease;
         }
-        .project-card .card-content {
-            padding: 15px;
+        .project-card:hover img {
+            transform: scale(1.08);
         }
-        .project-card .card-content h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
+        .card-content {
+            
+            padding: 20px;
+        }
+        .card-content h3 {
+           
+
+            font-size: 1.1rem;
+            margin-bottom: 12px;
             font-family: orbitron;
+            color: #02faf2;
         }
-        .project-card .card-content p {
-            font-size: 1rem;
-            margin: 5px 0;
+        .card-content h3 strong {
+            color: #a82dff;
+            font-size: 0.9rem;
+        }
+        .card-content p {
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: rgba(255,255,255,0.8);
             overflow: hidden;
-            max-height: 3rem;
+            max-height: 4.5em;
             transition: max-height 0.3s ease;
         }
-        .project-card:hover .card-content p {
-            max-height: 10rem;
+        .project-card:hover p {
+            max-height: 20em;
+        }
+        .card-content p strong {
+            color: #2d7ecf;
         }
     </style>
 </head>
