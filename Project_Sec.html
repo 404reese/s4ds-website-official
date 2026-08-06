@@ -323,7 +323,7 @@
           </div>
           
           <!-- Action Buttons -->
-          <div class="flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-8 mt-12">
+          <!-- <div class="flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-8 mt-12">
             <div class="relative h-auto w-auto">
               <div style="margin-bottom: -6px; margin-right: -6px" class="absolute bottom-0 right-0 h-full w-full bg-black"></div>
               <div class="relative z-10 flex h-full w-full items-center justify-center">
@@ -341,7 +341,7 @@
                 </a>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
         
         <!-- Footer info -->
@@ -1075,6 +1075,19 @@
     
     
         <div class="mx-auto min-h-screen w-responsive pb-6 pt-32 md:pt-40">
+            <!-- Knowcode 3.0 Announcement Box -->
+            <div style="margin-bottom: 40px;">
+                <div style="position: relative; display: inline-block; width: 100%;">
+                    <div style="position: absolute; width: 100%; height: 100%; background: #242020; border: 3px solid #F3C246; top: 8px; left: 8px; z-index: 1;"></div>
+                    <div style="position: relative; z-index: 2; background: #F3C246; border: 3px solid black; padding: 20px 30px; text-align: center;">
+                        <p style="color: #242020; font-size: 20px; font-weight: 800; margin: 0;">
+                            <a href="https://knowcode-3.devfolio.co/projects" target="_blank" style="text-decoration: underline; margin-left: 10px; font-weight: 900;">SEE PROJECTS COMPLETED IN KNOWCODE 3.0 HACKATHON 
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
             <!-- Hero Section -->
             <section class="hero">
                 <div class="hero-main">
@@ -1189,7 +1202,7 @@
             </div>
             
             <!-- Past Projects Section -->
-            <div class="section-title">
+            <div id="completed-projects" class="section-title">
                 <img src="./images/project_sec/Polygon 1.svg" alt="Polygon" class="tag" style="background:#242020;width: 47px; height: 47px; margin-right: 20px;">
                 <div class="tag-text">Completed</div>
                 <div class="section-main"><div style="width: 100%; height: 100%;background-color: rgb(126 127 231/var(--tw-bg-opacity,1)); color:#242020; font-size: 32px; font-family: Archivo; font-weight: 900; word-wrap: break-word;padding: 10px;">Projects</div></div>
@@ -1338,28 +1351,17 @@
 
     
 
-    <footer class="bg-grey mt-16">
+    <footer class="bg-grey border-t-4 border-white mt-16">
       <div class="mx-auto w-responsive py-12">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <!-- About Section -->
-          <div class="space-y-4">
-            <div class="flex items-center">
-              <div class="relative h-auto w-auto">
-                <div
-                  style="margin-bottom: -4px; margin-right: -4px"
-                  class="absolute bottom-0 right-0 h-full w-full border-yellow border-2"
-                ></div>
-                <div class="relative z-10 flex h-full w-full items-center justify-center">
-                  <div class="w-fit bg-yellow px-3 py-2">
-                    <h3 class="text-xl font-black text-grey">About S4DS</h3>
-                  </div>
-                </div>
+          
+          <div class="space-y-4 flex items-center justify-center">
+            <div class="relative h-auto w-auto">
+              <div style="margin-bottom: -2px; margin-right: -4px" class="absolute bottom-0 right-0 h-full w-full"></div>
+              <div class="relative z-10 flex h-full w-full items-center justify-center">
+                <img src="images/s4ds-white-1.png" alt="S4DS Logo" class="w-41 h-40" />
               </div>
             </div>
-            <p class="text-white text-sm">
-              Society for Data Science at K.J. Somaiya Institute of Technology - 
-              Building the future through data science, AI, and innovation.
-            </p>
           </div>
 
           <!-- Quick Links -->
@@ -1401,9 +1403,9 @@
               </div>
             </div>
             <ul class="space-y-2 text-white text-sm">
-              <li>Development to Deployment</li>
+              
               <li>Knowcode 3.0 Hackathon</li>
-              <li>Tech Time Trace</li>
+              <li>Flutter Workshop</li>
             </ul>
           </div>
 
@@ -1448,7 +1450,7 @@
                 ></div>
                 <div class="relative z-10 flex h-full w-full items-center justify-center">
                   <div class="w-fit bg-yellow px-4 py-2">
-                    <p class="text-grey font-black">© 2025 S4DS KJSIT. All rights reserved.</p>
+                    <p class="text-grey font-black">© 2026 S4DS KJSIT. All rights reserved.</p>
                   </div>
                 </div>
               </div>
