@@ -82,6 +82,21 @@
     
     <!-- Custom Mobile Menu Styles -->
     <style>
+      /* Team photos: one per row and larger on mobile */
+      @media (max-width: 767px) {
+        .team-row {
+          flex-direction: column;
+          flex-wrap: nowrap;
+          align-items: center;
+          justify-content: center;
+          gap: 2.5rem;
+        }
+        .team-photo {
+          height: min(280px, 72vw) !important;
+          width: min(280px, 72vw) !important;
+        }
+      }
+
       /* Full screen mobile menu styles */
       #mobile-menu {
         opacity: 0;
@@ -310,55 +325,49 @@
     <div class="lg-xl:hidden fixed z-[9999] w-full transition-all">
       <div class="absolute -z-20 h-40 w-full transition-all duration-500"></div>
       <div class="mx-auto mt-8 transition-all w-responsive">
-        <div class="flex">
-          <a class="grow flex flex-row items-center" href="index.html">
-            <img
-              alt="Computer Science Club Logo"
-              loading="lazy"
-              width="100"
-              height="100"
-              decoding="async"
-              data-nimg="1"
-              class="h-full w-[3rem] md:w-[2rem] lg:w-[2.5rem]"
-              style="color: transparent"
-              src="images/s4ds-white.png"
-            />
-            <h1
-              class="text-white ml-2 text-3xl font-bold md:text-xl lg:text-2xl"
+        <div class="relative">
+          <div
+            style="margin-bottom: -8px; margin-right: -8px"
+            class="absolute bottom-0 right-0 h-full w-full bg-black"
+          ></div>
+          <div
+            class="relative flex items-center justify-between gap-3 border-4 border-black bg-white px-4 py-3 text-grey"
+          >
+            <a class="flex min-w-0 flex-row items-center" href="index.html">
+              <img
+                alt="Computer Science Club Logo"
+                loading="lazy"
+                width="100"
+                height="100"
+                decoding="async"
+                data-nimg="1"
+                class="h-12 w-12 flex-shrink-0 object-contain"
+                style="color: transparent"
+                src="images/s4ds-white.png"
+              />
+              <h1 class="text-grey ml-2 truncate text-2xl font-bold">
+                S4DS KJSIT
+              </h1>
+            </a>
+            <button
+              id="mobile-menu-button"
+              class="relative flex h-12 w-12 flex-shrink-0 items-center justify-center bg-white text-3xl text-black transition-all duration-300"
             >
-              S4DS KJSIT
-            </h1>
-          </a>
-          <div class="flex items-center">
-            <div class="relative h-auto w-auto">
-              <div
-                style="margin-bottom: -4px; margin-right: -4px"
-                class="absolute bottom-0 right-0 h-full w-full bg-black"
-              ></div>
-              <div
-                class="relative z-10 flex h-full w-full items-center justify-center"
+              <svg
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 512 512"
+                aria-label="Menu"
+                height="1em"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <button
-                  id="mobile-menu-button"
-                  class="bg-white relative flex h-16 w-16 items-center justify-center border-4 border-black text-4xl text-black transition-all duration-300"
-                >
-                  <svg
-                    stroke="currentColor"
-                    fill="currentColor"
-                    stroke-width="0"
-                    viewBox="0 0 512 512"
-                    aria-label="Menu"
-                    height="1em"
-                    width="1em"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M64 384h384v-42.666H64V384zm0-106.666h384v-42.667H64v42.667zM64 128v42.665h384V128H64z"
-                    ></path>
-                  </svg>
-                </button>
-              </div>
-            </div>
+                <path
+                  d="M64 384h384v-42.666H64V384zm0-106.666h384v-42.667H64v42.667zM64 128v42.665h384V128H64z"
+                ></path>
+              </svg>
+            </button>
           </div>
         </div>
       </div>
@@ -1271,7 +1280,7 @@
           </div>
           <div class="relative z-10 mt-16 space-y-4">
             <div
-              class="flex flex-wrap justify-center gap-6 pb-2 smr:justify-start"
+              class="team-row flex flex-wrap justify-center gap-6 pb-2 smr:justify-start"
             >
               <div class="flex flex-col items-center">
                 <a class="block" target="_blank" rel="noopener noreferrer">
@@ -1291,7 +1300,7 @@
                           height="250"
                           decoding="async"
                           data-nimg="1"
-                          class="h-[150px] w-[150px] bg-white object-contain p-2 md:h-[250px] md:w-[250px]"
+                          class="team-photo h-[150px] w-[150px] bg-white object-contain p-2 md:h-[250px] md:w-[250px]"
                           style="color: transparent"
                           src="images/mn.jpg"
                         />
@@ -1335,7 +1344,7 @@
                           height="250"
                           decoding="async"
                           data-nimg="1"
-                          class="h-[150px] w-[150px] bg-white object-contain p-2 md:h-[250px] md:w-[250px]"
+                          class="team-photo h-[150px] w-[150px] bg-white object-contain p-2 md:h-[250px] md:w-[250px]"
                           style="color: transparent"
                           src="images/db.png"
                         />
@@ -1379,7 +1388,7 @@
                           height="250"
                           decoding="async"
                           data-nimg="1"
-                          class="h-[150px] w-[150px] bg-white object-contain p-2 md:h-[250px] md:w-[250px]"
+                          class="team-photo h-[150px] w-[150px] bg-white object-contain p-2 md:h-[250px] md:w-[250px]"
                           style="color: transparent"
                           src="images/ss.jpg"
                         />
@@ -1458,7 +1467,7 @@
           </div>
           <div class="relative z-10 mt-16 space-y-4">
             <div
-              class="flex flex-wrap justify-center gap-6 pb-2 smr:justify-start"
+              class="team-row flex flex-wrap justify-center gap-6 pb-2 smr:justify-start"
             >
               <div class="flex flex-col items-center">
                 <a class="block" target="_blank" rel="noopener noreferrer">
@@ -1478,7 +1487,7 @@
                           height="250"
                           decoding="async"
                           data-nimg="1"
-                          class="h-[150px] w-[150px] bg-white object-contain p-2 md:h-[250px] md:w-[250px]"
+                          class="team-photo h-[150px] w-[150px] bg-white object-contain p-2 md:h-[250px] md:w-[250px]"
                           style="color: transparent"
                           src="images/darshnew.png"
                         />
@@ -1522,7 +1531,7 @@
                           height="250"
                           decoding="async"
                           data-nimg="1"
-                          class="h-[150px] w-[150px] bg-white object-contain p-2 md:h-[250px] md:w-[250px]"
+                          class="team-photo h-[150px] w-[150px] bg-white object-contain p-2 md:h-[250px] md:w-[250px]"
                           style="color: transparent"
                           src="images/devalnew.png"
                         />
@@ -1566,7 +1575,7 @@
                           height="250"
                           decoding="async"
                           data-nimg="1"
-                          class="h-[150px] w-[150px] bg-white object-contain p-2 md:h-[250px] md:w-[250px]"
+                          class="team-photo h-[150px] w-[150px] bg-white object-contain p-2 md:h-[250px] md:w-[250px]"
                           style="color: transparent"
                           src="images/hamzanew.png"
                         />
@@ -1609,7 +1618,7 @@
                           height="250"
                           decoding="async"
                           data-nimg="1"
-                          class="h-[150px] w-[150px] bg-white object-contain p-2 md:h-[250px] md:w-[250px]"
+                          class="team-photo h-[150px] w-[150px] bg-white object-contain p-2 md:h-[250px] md:w-[250px]"
                           style="color: transparent"
                           src="images/rid.png"
                         />
@@ -1653,7 +1662,7 @@
                           height="250"
                           decoding="async"
                           data-nimg="1"
-                          class="h-[150px] w-[150px] bg-white object-contain p-2 md:h-[250px] md:w-[250px]"
+                          class="team-photo h-[150px] w-[150px] bg-white object-contain p-2 md:h-[250px] md:w-[250px]"
                           style="color: transparent"
                           src="images/manavnew.png"
                         />
@@ -1697,7 +1706,7 @@
                           height="250"
                           decoding="async"
                           data-nimg="1"
-                          class="h-[150px] w-[150px] bg-white object-contain p-2 md:h-[250px] md:w-[250px]"
+                          class="team-photo h-[150px] w-[150px] bg-white object-contain p-2 md:h-[250px] md:w-[250px]"
                           style="color: transparent"
                           src="images/insiyahnew.png"
                         />
@@ -1740,7 +1749,7 @@
                           height="250"
                           decoding="async"
                           data-nimg="1"
-                          class="h-[150px] w-[150px] bg-white object-contain p-2 md:h-[250px] md:w-[250px]"
+                          class="team-photo h-[150px] w-[150px] bg-white object-contain p-2 md:h-[250px] md:w-[250px]"
                           style="color: transparent"
                           src="images/purunew.png"
                         />
@@ -1783,7 +1792,7 @@
                           height="250"
                           decoding="async"
                           data-nimg="1"
-                          class="h-[150px] w-[150px] bg-white object-contain p-2 md:h-[250px] md:w-[250px]"
+                          class="team-photo h-[150px] w-[150px] bg-white object-contain p-2 md:h-[250px] md:w-[250px]"
                           style="color: transparent"
                           src="images/omnew.png"
                         />
@@ -1813,7 +1822,7 @@
             <!-- Joint Positions -->
             <div class="mt-8">
               <h3 class="text-xl font-black text-white mb-6">Joint Positions</h3>
-              <div class="flex flex-wrap justify-center gap-2 pb-2 smr:justify-start lg:flex-nowrap lg:gap-4 lg:overflow-x-auto">
+              <div class="team-row flex flex-wrap justify-center gap-2 pb-2 smr:justify-start lg:flex-nowrap lg:gap-4 lg:overflow-x-auto">
               <div class="flex flex-col items-center flex-shrink-0 lg:w-1/5">
                 <a class="block" target="_blank" rel="noopener noreferrer">
                   <div class="flex items-center">
@@ -1832,7 +1841,7 @@
                           height="250"
                           decoding="async"
                           data-nimg="1"
-                          class="h-[150px] w-[150px] bg-white object-contain p-2 md:h-[250px] md:w-[250px]"
+                          class="team-photo h-[150px] w-[150px] bg-white object-contain p-2 md:h-[250px] md:w-[250px]"
                           style="color: transparent"
                           src="images/heli.png"
                         />
@@ -1876,7 +1885,7 @@
                           height="250"
                           decoding="async"
                           data-nimg="1"
-                          class="h-[150px] w-[150px] bg-white object-contain p-2 md:h-[250px] md:w-[250px]"
+                          class="team-photo h-[150px] w-[150px] bg-white object-contain p-2 md:h-[250px] md:w-[250px]"
                           style="color: transparent"
                           src="images/shubham.png"
                         />
@@ -1922,7 +1931,7 @@
                           height="250"
                           decoding="async"
                           data-nimg="1"
-                          class="h-[150px] w-[150px] bg-white object-contain p-2 md:h-[250px] md:w-[250px]"
+                          class="team-photo h-[150px] w-[150px] bg-white object-contain p-2 md:h-[250px] md:w-[250px]"
                           style="color: transparent"
                           src="images/sameera.png"
                         />
@@ -1966,7 +1975,7 @@
                           height="250"
                           decoding="async"
                           data-nimg="1"
-                          class="h-[150px] w-[150px] bg-white object-contain p-2 md:h-[250px] md:w-[250px]"
+                          class="team-photo h-[150px] w-[150px] bg-white object-contain p-2 md:h-[250px] md:w-[250px]"
                           style="color: transparent"
                           src="images/maitri.png"
                         />
@@ -2009,7 +2018,7 @@
                           height="250"
                           decoding="async"
                           data-nimg="1"
-                          class="h-[150px] w-[150px] bg-white object-contain p-2 md:h-[250px] md:w-[250px]"
+                          class="team-photo h-[150px] w-[150px] bg-white object-contain p-2 md:h-[250px] md:w-[250px]"
                           style="color: transparent"
                           src="images/ravi.png"
                         />
